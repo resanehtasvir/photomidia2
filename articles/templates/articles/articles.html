@@ -6,8 +6,9 @@ articles
 {% block content %}
   <div class="continer">
     <h1>articls</h1>
+    {% for items in articles %}
+
     <h2>
-      {% for items in articles %}
       <a href="#">{{items.title}}</a>
     </h2>
     <p>{{items.character}}</p>
