@@ -6,10 +6,11 @@ articles
 {% block content %}
   <div class="continer">
     <h1>articls</h1>
-    {% for items in articles %}
 
     <h2>
-      <a href="#">{{items.title}}</a>
+      {% for items in articles %}
+
+      <a href="{% url 'articles:detail' slug=items.slug %}">{{items.title}}</a>
     </h2>
     <p>{{items.character}}</p>
     <p>{{items.date}}</p>
