@@ -6,4 +6,5 @@ def articles(request):
     args = {'articles':articles}
     return render(request, 'articles/articles.html', args)
 def articles_detail(request, slug):
-    return HttpResponse(slug)
+    article = models.Article.objects.get(slug=slug)
+    return render(request, 'articles/article_detail.html', {'article':article} )
